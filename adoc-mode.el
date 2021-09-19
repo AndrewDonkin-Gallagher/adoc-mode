@@ -1032,13 +1032,13 @@ further tests to find a proper xref."
    ((eq type 'inline-special-with-caption)
     ;; (?su)[\\]?&lt;&lt;(?P<attrlist>[\w"].*?)&gt;&gt;=xref2
     (if for-kw
-	"\\(<<\\)\\([a-zA-Z0-9\"].*?\\)\\(,\\)\\(.*?\\(?:\n.*?\\)??\\)\\(>>\\)"
+	"\\(<<\\)\\([_a-zA-Z0-9\"].*?\\)\\(,\\)\\(.*?\\(?:\n.*?\\)??\\)\\(>>\\)"
       (concat "\\(<<\\)\\(" (adoc-re-id) "[ \t\n]*\\)\\(,\\)\\([^>\n]*?\\(?:\n[^>\n]*?\\)??\\)\\(>>\\)")))
 
    ((eq type 'inline-special-no-caption)
     ;; asciidoc.conf uses the same regexp as for without caption
     (if for-kw
-	"\\(<<\\)\\([a-zA-Z0-9\"].*?\\(?:\n.*?\\)??\\)\\(>>\\)"
+	"\\(<<\\)\\([_a-zA-Z0-9\"].*?\\(?:\n.*?\\)??\\)\\(>>\\)"
       (concat "\\(<<\\)\\(" (adoc-re-id) "[ \t\n]*\\)\\(>>\\)")))
 
    ((eq type 'inline-general-macro)
